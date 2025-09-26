@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>a</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=date_range" />
+        <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Inicio</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Acerca</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Carrera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Deslinde</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Inscribite</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      <!-- INICIO-->
+        <header class="masthead" style="background-image:url('../static/images/foto_inicio.jpg')">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">a</h1>
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">a</p>
+                        <a class="btn btn-primary btn-xl" href="#about">Informacion</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<!-- FORMULARIO-->
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <form id="contact" data-sb-form-api-token="API_TOKEN" action="" method="POST">
+                    <h2>Inscripción</h2>
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Introduce el nombre del corredor..."  name="nombre">
+                        <label for="name">Nombre/s</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">No introdujiste el nombre del corredor.</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Introduce el Apellido del corredor..." name="apellido_pat">
+                        <label for="name">Apellido/s</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">No introdujiste el nombre del corredor.</div>
+                    </div>
+
+
+                    <label for="register-doc-id">Tipo de Documento / <i>Document Type</i> </label>
+                    <select class="form-control required" id="register-doc-id" placeholder="Seleccione un Tipo de Documento">
+                        <option value="1">DNI</option>
+                        <option value="2">Pasaporte</option>
+                    </select>
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="number"  name="DNI">
+                        <label for="name">DNI/Pasaporte</label>
+                        <div class="invalid-tooltip"> Dni es requerido.</div>
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="date" name="nacimiento" placeholder="Introduce la fecha de nacimiento">
+                    <label for="name">Fecha de nacimiento</label>
+                    </div>
+                
+
+                <h2>Informacion de carrera</h2>
+                    <div class="form-check">
+                    <input type="radio" class="form-check-input" id="validationFormCheck2" name="salud" required>
+                    <label class="form-check-label" for="validationFormCheck2">Carrera corta</label>
+                    </div>
+
+
+                    <div class="form-check mb-3">
+                        <input type="radio" class="form-check-input" id="validationFormCheck3" name="salud" required>
+                        <label class="form-check-label" for="validationFormCheck3">Carrera larga</label>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <select class="form-select" required aria-label="select example" name="idsala">
+                         <option value=""></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        </select>
+                        <div class="invalid-feedback">No seleccionaste la salita</div>
+                    </div>
+
+
+                    <label for="register-country">Nacionalidad / <i>Nationality</i> </label>
+                    <select class="form-control required" id="register-country" placeholder="Nacionalidad"><option value=""></option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option><option value="4">American Samoa</option><option value="5">Andorra</option><option value="6">Angola</option><option value="7">Anguilla</option><option value="8">Antarctica</option><option value="9">Antigua and Barbuda</option><option value="10">Argentina</option><option value="11">Armenia</option><option value="12">Aruba</option><option value="13">Ashmore and Cartier</option><option value="14">Australia</option><option value="15">Austria</option><option value="16">Azerbaijan</option><option value="17">The Bahamas</option><option value="18">Bahrain</option><option value="19">Baker Island</option><option value="20">Bangladesh</option><option value="21">Barbados</option><option value="22">Bassas da India</option><option value="23">Belarus</option><option value="24">Belgium</option><option value="25">Belize</option><option value="26">Benin</option><option value="27">Bermuda</option><option value="28">Bhutan</option><option value="29">Bolivia</option><option value="30">Bosnia and Herzegovina</option><option value="31">Botswana</option><option value="32">Bouvet Island</option><option value="33">Brazil</option><option value="34">British Indian Ocean Territory</option><option value="35">British Virgin Islands</option><option value="36">Brunei Darussalam</option><option value="37">Bulgaria</option><option value="38">Burkina Faso</option><option value="39">Burma</option><option value="40">Burundi</option><option value="41">Cambodia</option><option value="42">Cameroon</option><option value="43">Canada</option><option value="44">Cape Verde</option><option value="45">Cayman Islands</option><option value="46">Central African Republic</option><option value="47">Chad</option><option value="48">Chile</option><option value="49">China</option><option value="50">Christmas Island</option><option value="51">Clipperton Island</option><option value="52">Cocos (Keeling) Islands</option><option value="53">Colombia</option><option value="54">Comoros</option><option value="55">Congo, Democratic Republic of the</option><option value="56">Congo, Republic of the</option><option value="57">Cook Islands</option><option value="58">Coral Sea Islands</option><option value="59">Costa Rica</option><option value="60">Cote d'Ivoire</option><option value="61">Croatia</option><option value="62">Cuba</option><option value="63">Cyprus</option><option value="64">Czech Republic</option><option value="65">Denmark</option><option value="66">Djibouti</option><option value="67">Dominica</option><option value="68">Dominican Republic</option><option value="69">East Timor</option><option value="70">Ecuador</option><option value="71">Egypt</option><option value="72">El Salvador</option><option value="73">Equatorial Guinea</option><option value="74">Eritrea</option><option value="75">Estonia</option><option value="76">Ethiopia</option><option value="77">Europa Island</option><option value="78">Falkland Islands (Islas Malvinas)</option><option value="79">Faroe Islands</option><option value="80">Fiji</option><option value="81">Finland</option><option value="82">France</option><option value="83">France, Metropolitan</option><option value="84">French Guiana</option><option value="85">French Polynesia</option><option value="86">French Southern and Antarctic Lands</option><option value="87">Gabon</option><option value="88">The Gambia</option><option value="89">Gaza Strip</option><option value="90">Georgia</option><option value="91">Germany</option><option value="92">Ghana</option><option value="93">Gibraltar</option><option value="94">Glorioso Islands</option><option value="95">Greece</option><option value="96">Greenland</option><option value="97">Grenada</option><option value="98">Guadeloupe</option><option value="99">Guam</option><option value="100">Guatemala</option><option value="101">Guernsey</option><option value="102">Guinea</option><option value="103">Guinea-Bissau</option><option value="104">Guyana</option><option value="105">Haiti</option><option value="106">Heard Island and McDonald Islands</option><option value="107">Holy See (Vatican City)</option><option value="108">Honduras</option><option value="109">Hong Kong (SAR)</option><option value="110">Howland Island</option><option value="111">Hungary</option><option value="112">Iceland</option><option value="113">India</option><option value="114">Indonesia</option><option value="115">Iran</option><option value="116">Iraq</option><option value="117">Ireland</option><option value="118">Israel</option><option value="119">Italy</option><option value="120">Jamaica</option><option value="121">Jan Mayen</option><option value="122">Japan</option><option value="123">Jarvis Island</option><option value="124">Jersey</option><option value="125">Johnston Atoll</option><option value="126">Jordan</option><option value="127">Juan de Nova Island</option><option value="128">Kazakhstan</option><option value="129">Kenya</option><option value="130">Kingman Reef</option><option value="131">Kiribati</option><option value="132">Korea, North</option><option value="133">Korea, South</option><option value="134">Kuwait</option><option value="135">Kyrgyzstan</option><option value="136">Laos</option><option value="137">Latvia</option><option value="138">Lebanon</option><option value="139">Lesotho</option><option value="140">Liberia</option><option value="141">Libya</option><option value="142">Liechtenstein</option><option value="143">Lithuania</option><option value="144">Luxembourg</option><option value="145">Macao</option><option value="146">Macedonia, The Former Yugoslav Republic of</option><option value="147">Madagascar</option><option value="148">Malawi</option><option value="149">Malaysia</option><option value="150">Maldives</option><option value="151">Mali</option><option value="152">Malta</option><option value="153">Man, Isle of</option><option value="154">Marshall Islands</option><option value="155">Martinique</option><option value="156">Mauritania</option><option value="157">Mauritius</option><option value="158">Mayotte</option><option value="159">Mexico</option><option value="160">Micronesia, Federated States of</option><option value="161">Midway Islands</option><option value="162">Miscellaneous (French)</option><option value="163">Moldova</option><option value="164">Monaco</option><option value="165">Mongolia</option><option value="166">Montenegro</option><option value="167">Montserrat</option><option value="168">Morocco</option><option value="169">Mozambique</option><option value="170">Myanmar</option><option value="171">Namibia</option><option value="172">Nauru</option><option value="173">Navassa Island</option><option value="174">Nepal</option><option value="175">Netherlands</option><option value="176">Netherlands Antilles</option><option value="177">New Caledonia</option><option value="178">New Zealand</option><option value="179">Nicaragua</option><option value="180">Niger</option><option value="181">Nigeria</option><option value="182">Niue</option><option value="183">Norfolk Island</option><option value="184">Northern Mariana Islands</option><option value="185">Norway</option><option value="186">Oman</option><option value="187">Pakistan</option><option value="188">Palau</option><option value="189">Palmyra Atoll</option><option value="190">Panama</option><option value="191">Papua New Guinea</option><option value="192">Paracel Islands</option><option value="193">Paraguay</option><option value="194">Peru</option><option value="195">Philippines</option><option value="196">Pitcairn Islands</option><option value="197">Poland</option><option value="198">Portugal</option><option value="199">Puerto Rico</option><option value="200">Qatar</option><option value="201">R?union</option><option value="202">Romania</option><option value="203">Russia</option><option value="204">Rwanda</option><option value="205">Saint Helena</option><option value="206">Saint Kitts and Nevis</option><option value="207">Saint Lucia</option><option value="208">Saint Pierre and Miquelon</option><option value="209">Saint Vincent and the Grenadines</option><option value="210">Samoa</option><option value="211">San Marino</option><option value="212">S?o Tom? and Pr?ncipe</option><option value="213">Saudi Arabia</option><option value="214">Senegal</option><option value="215">Serbia</option><option value="216">Serbia and Montenegro</option><option value="217">Seychelles</option><option value="218">Sierra Leone</option><option value="219">Singapore</option><option value="220">Slovakia</option><option value="221">Slovenia</option><option value="222">Solomon Islands</option><option value="223">Somalia</option><option value="224">South Africa</option><option value="225">South Georgia and the South Sandwich Islands</option><option value="226">Spain</option><option value="227">Spratly Islands</option><option value="228">Sri Lanka</option><option value="229">Sudan</option><option value="230">Suriname</option><option value="231">Svalbard</option><option value="232">Swaziland</option><option value="233">Sweden</option><option value="234">Switzerland</option><option value="235">Syria</option><option value="236">Taiwan</option><option value="237">Tajikistan</option><option value="238">Tanzania</option><option value="239">Thailand</option><option value="240">Togo</option><option value="241">Tokelau</option><option value="242">Tonga</option><option value="243">Trinidad and Tobago</option><option value="244">Tromelin Island</option><option value="245">Tunisia</option><option value="246">Turkey</option><option value="247">Turkmenistan</option><option value="248">Turks and Caicos Islands</option><option value="249">Tuvalu</option><option value="250">Uganda</option><option value="251">Ukraine</option><option value="252">United Arab Emirates</option><option value="253">United Kingdom</option><option value="254">United States</option><option value="255">United States Minor Outlying Islands</option><option value="256">Uruguay</option><option value="257">Uzbekistan</option><option value="258">Vanuatu</option><option value="259">Venezuela</option><option value="260">Vietnam</option><option value="261">Virgin Islands</option><option value="262">Virgin Islands (UK)</option><option value="263">Virgin Islands (US)</option><option value="264">Wake Island</option><option value="265">Wallis and Futuna</option><option value="266">West Bank</option><option value="267">Western Sahara</option><option value="268">Western Samoa</option><option value="269">World</option><option value="270">Yemen</option><option value="271">Yugoslavia</option><option value="272">Zaire</option><option value="273">Zambia</option><option value="274">Zimbabwe</option><option value="275">Palestinian Territory, Occupied</option>
+                    </select>
+                
+
+
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no" name="observaciones"></textarea>
+                        <label for="message">Observaciones</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                    </div>
+
+
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+
+
+                    <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">enviar</button></div>
+                </form>
+            </div>
+        </div>
+        </section>
+
+
+
+           <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Datos de la carrera</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-calendar fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Fecha:</h3>
+                            <p class="text-muted mb-0">a</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-alarm fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Horario:</h3>
+                            <p class="text-muted mb-0">a</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Ubicacion:</h3>
+                            <p class="text-muted mb-0">a</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-bicycle fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Tipo de carrera:</h3>
+                            <p class="text-muted mb-0">a</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- *Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="container  d-flex align-items-center">
+                <ul><a href="">Mail:bmx@bmx.com </a></ul>
+                <ul><a href="">Contacto: Whatsapp:</a></ul>
+                <ul > Página: </ul>
+                </div>
+                <div class="small text-center text-muted">Copyright &copy; 2025 - Dylan Ruiz, Mariano Molloja, Lucas Roda</div>
+            </div>
+        </footer>
+    </body>
+</html>
