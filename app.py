@@ -53,6 +53,10 @@ def home ():
             "tipo_carrera": "MTB rural", 
             "modalidad_costo": {1: {"nombre": "Corta" ,"valor": "45.000"}, 
                                 2: {"nombre": "Larga" ,"valor": "60.000"}}, 
+            "puntos_de_hidratacion_30": "Intersecciones con las calles: San Martín, Las Heras, Sáenz Peña",
+            "puntos_de_hidratacion_80": "Intersecciones con las calles: San Martín, Las Heras, Sáenz Peña, Franklin, Honduras, Montiel",
+            "punto_llegada" : "Azcuénaga 641",
+            "punto_salida" : "Tandil, B7000",
         } 
     ,2:{
             "Auspiciantes": ["Nike","Gatorade", "Villavicencio", "Swiss Medical"],
