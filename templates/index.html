@@ -112,8 +112,43 @@
                             <p class="text-muted mb-0">{{info_evento.1.tipo_carrera}}</p>
                         </div>
                     </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-droplet fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Puntos de hidratación (30km):</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.puntos_de_hidratacion_30}}</p>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-droplet fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Puntos de hidratación (80km):</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.puntos_de_hidratacion_80}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-geo-alt fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Punto de llegada:</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.punto_llegada}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-geo-alt fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Punto de salida:</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.punto_salida}}</p>
+                        </div>
+                    </div>
+
                    <center>  <h3>Ubicación</h3></center> 
-<iframe src="https://www.google.com/maps/embed?pb=!1m50!1m12!1m3!1d50766.565364986374!2d-59.16053981072891!3d-37.32095155712852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m35!3e1!4m3!3m2!1d-37.3425018!2d-59.122578!4m5!1s0x95911fb7cf269c03%3A0x7bc38984e9fbfdc4!2sAzcu%C3%A9naga%20641%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-37.3413635!2d-59.1281477!4m3!3m2!1d-37.3304869!2d-59.0959727!4m3!3m2!1d-37.315934999999996!2d-59.1086953!4m3!3m2!1d-37.303373799999996!2d-59.1244881!4m3!3m2!1d-37.3125901!2d-59.143542499999995!4m3!3m2!1d-37.336721!2d-59.140597899999996!4m3!3m2!1d-37.342267799999995!2d-59.1374006!5e0!3m2!1ses!2sar!4v1758850213816!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </section>
+<iframe src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d50789.34611198536!2d-59.142046387077336!3d-37.28721408299573!3m2!1i1024!2i768!4f13.1!4m9!3e1!4m3!3m2!1d-37.2875982!2d-59.1191135!4m3!3m2!1d-37.341678!2d-59.127674199999994!5e0!3m2!1ses!2sar!4v1758792994154!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
 
 
         <!-- IMAGENES-->
@@ -148,8 +183,7 @@
                       <!-- ALGO 2-->
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="{{ url_for('static', filename='/images/foto2.jpg')}}" title="Project Name">
-                            <img class="img-fluid" src="{{ url_for('static', filename='/images/gatorade.png')}}" alt="..." />
-                            <img class="img-fluid" src="{{ url_for('static', filename='/images/villavicencio.jpeg')}}" alt="..." />
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/gatorade-5.png')}}" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Category</div>
                                 <div class="project-name">{{info_evento.2.Auspiciantes.1}}</div>
@@ -172,7 +206,7 @@
                      <!-- ALGO 3-->
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="{{ url_for('static', filename='/images/foto2.jpg')}}" title="Project Name">
-                            <img class="img-fluid" src="{{ url_for('static', filename='/images/medical.png')}}" alt="..." />
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/medical3.png')}}" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Salud</div>
                                 <div class="project-name">{{info_evento.2.Auspiciantes.3}}</div>
