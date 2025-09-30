@@ -24,22 +24,11 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True 
 app.config['MAIL_USE_SSL'] = False 
 app.config['MAIL_USERNAME'] = 'your-email@gmail.com' 
-app.config['MAIL_PASSWORD'] = 'your-email-password'  
+app.config['MAIL_PASSWORD'] = 'your-email-password' 
 app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com' 
  
-
-@app.route('/formulario')
-def formulario():
-        return render_template('registration.html')
-
-@app.errorhandler(404)
-def page_not_found(e):
-       mensaje="Error de página"
-       return render_template('error.html',msj=mensaje)
  
-@app.route('/')
-def home ():
-    diccionario = { 
+diccionario = { 
     1: {    "nombre": "Rally MTB 2025",  
             "organizador": "Club Social y Deportivo Unidos por el Deporte", 
             "descripcion": "Carrera de MTB rural en dos modalidades 30km y 80km ...", 
@@ -62,6 +51,18 @@ def home ():
             "Auspiciantes": ["Nike","Gatorade", "Villavicencio", "Swiss Medical"],
         }
     }
+
+@app.route('/formulario')
+def formulario():
+        return render_template('registration.html', info_evento=diccionario)
+
+@app.errorhandler(404)
+def page_not_found(e):
+       mensaje="Error de página"
+       return render_template('error.html',msj=mensaje)
+ 
+@app.route('/')
+def home ():
     return render_template('index.html', info_evento=diccionario)
 
 if __name__== '__main__':

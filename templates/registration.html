@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>a</title>
+        <title>{{ info_evento.1.organizador }}</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/images/bicicleta.png')}}" />
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -27,10 +27,9 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Acerca</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Carrera</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Deslinde</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Inscribite</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Fornulario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#datos">Carrera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Volver</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,10 +39,10 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">a</h1>
+                        <h1 class="text-white font-weight-bold">{{ info_evento.1.nombre }}</h1>
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">a</p>
+                        <p class="text-white-75 mb-5">Formulario inscripcion</p>
                         <a class="btn btn-primary btn-xl" href="#about">Informacion</a>
                     </div>
                 </div>
@@ -156,54 +155,194 @@
 
 
 
-           <!-- Services-->
-        <section class="page-section" id="services">
+    <!-- ^DATOS DE LA CARRERA-->
+        <section class="page-section" id="datos">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">Datos de la carrera</h2>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
+
+
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-calendar fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Fecha:</h3>
-                            <p class="text-muted mb-0">a</p>
+                            <p class="text-muted mb-0">{{info_evento.1.fecha}}</p>
                         </div>
                     </div>
+
+
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-alarm fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Horario:</h3>
-                            <p class="text-muted mb-0">a</p>
+                            <p class="text-muted mb-0">{{info_evento.1.horario}}</p>
                         </div>
                     </div>
+
+
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Ubicacion:</h3>
-                            <p class="text-muted mb-0">a</p>
+                           <h3 class="h4 mb-2">Ubicacion:</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.lugar}}</p>
                         </div>
                     </div>
+
+
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <div class="mb-2"><i class="bi-bicycle fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">Tipo de carrera:</h3>
-                            <p class="text-muted mb-0">a</p>
+                            <p class="text-muted mb-0">{{info_evento.1.tipo_carrera}}</p>
                         </div>
                     </div>
-                </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-droplet fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Puntos de hidratación (30km):</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.puntos_de_hidratacion_30}}</p>
+                        </div>
+                    </div>
+
+                     <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-droplet fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Puntos de hidratación (80km):</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.puntos_de_hidratacion_80}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-geo-alt fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Punto de llegada:</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.punto_llegada}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-geo-alt fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Punto de salida:</h3>
+                            <p class="text-muted mb-0">{{info_evento.1.punto_salida}}</p>
+                        </div>
+                    </div>
+
+                   <center>  <h3>Ubicación</h3></center> 
+<iframe src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d50789.34611198536!2d-59.142046387077336!3d-37.28721408299573!3m2!1i1024!2i768!4f13.1!4m9!3e1!4m3!3m2!1d-37.2875982!2d-59.1191135!4m3!3m2!1d-37.341678!2d-59.127674199999994!5e0!3m2!1ses!2sar!4v1758792994154!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
 
-       <!-- *Footer-->
+
+        <!-- IMAGENES-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+
+
+                      <!-- ALGO 1-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/Nike-Logo.png')}}" title="Nike">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/Nike-Logo.png')}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">{{info_evento.2.Auspiciantes.0}}</div>
+                                <div class="project-name">{{info_evento.2.Auspiciantes.0}}</div>
+                            </div>
+                        </a>
+                    </div>
+
+                      <!-- IMAGEN 1-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/foto1.jpg')}}" title="Carrera 2024">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/foto1.jpg')}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">30km-2022</div>
+                                <div class="project-name">NEQUEN</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                      <!-- ALGO 2-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/gatorade-5.png')}}" title="Gatorade">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/gatorade-5.png')}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">{{info_evento.2.Auspiciantes.1}}</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                      <!-- IMAGEN 2-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/foto3.jpg')}}" title="Carrera 2019">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/foto3.jpg')}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">30km-2023</div>
+                                <div class="project-name">BUENOS AIRES</div>
+                            </div>
+                        </a>
+                    </div>
+
+                     <!-- ALGO 3-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/medical3.png')}}" title="Swiss medical">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/medical3.png')}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Salud</div>
+                                <div class="project-name">{{info_evento.2.Auspiciantes.3}}</div>
+                            </div>
+                        </a>
+                    </div>
+
+                     <!-- IMAGEN 3-->
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="{{ url_for('static', filename='/images/foto2.jpg')}}" title="Carrera 2021">
+                            <img class="img-fluid" src="{{ url_for('static', filename='/images/foto2.jpg')}}" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">80km-2023</div>
+                                <div class="project-name">CÓRDOBA</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+  <!--^ESTO SE REPITE-->
+
+       
+        <!-- *Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5">
                 <div class="container  d-flex align-items-center">
-                <ul><a href="">Mail:bmx@bmx.com </a></ul>
-                <ul><a href="">Contacto: Whatsapp:</a></ul>
-                <ul > Página: </ul>
+                <ul>Mail:@mail.com</ul>
+                <ul>Contacto: Whatsapp:11 +54 1234-5678</ul>
                 </div>
                 <div class="small text-center text-muted">Copyright &copy; 2025 - Dylan Ruiz, Mariano Molloja, Lucas Roda</div>
             </div>
         </footer>
+        
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    
+    
+    
     </body>
 </html>
