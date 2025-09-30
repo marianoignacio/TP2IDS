@@ -72,24 +72,28 @@ def home ():
     return render_template('index.html', info_evento=diccionario)
 @app.route('/enviar', methods=['POST'])
 def enviar():
-    nombre = request.form['nombre']
-    apellido= request.form['apellido_pat']
-    carrera=request.form['carrera']
-    dni= request.form['DNI']
-    nacimiento= request.form['nacimiento']
-    nacionalidad= request.form['nacionalidad']
-    observaciones= request.form['observaciones']
-   
+    try:
+        nombre = request.form['nombre']
+        apellido= request.form['apellido_pat']
+        carrera=request.form['carrera']
+        dni= request.form['DNI']
+        nacimiento= request.form['nacimiento']
+        nacionalidad= request.form['nacionalidad']
+        observaciones= request.form['observaciones']
+    
 
-    msg = Message(
-        subject=f"Inscripcion de: {nombre}",
-        recipients=['mtbrally51@gmail.com'], 
-        body=f"Nombre: {nombre}\nApellido: {apellido}\nDNI: {dni}\nFecha de nacimiento: {nacimiento}\nTipo de carrera: {carrera}\nNacionalidad: {nacionalidad}\nMensaje:\n{observaciones}"
-    )
+        msg = Message(
+            subject=f"Inscripcion de: {nombre}",
+            recipients=['mtbrally51@gmail.com'], 
+            body=f"Nombre: {nombre}\nApellido: {apellido}\nDNI: {dni}\nFecha de nacimiento: {nacimiento}\nTipo de carrera: {carrera}\nNacionalidad: {nacionalidad}\nMensaje:\n{observaciones}"
+        )
 
-    mail.send(msg)
+        mail.send(msg)
 
-    return "Mensaje enviado correctamente"
+        return "Mensaje enviado correctamente"
+    except Exception as e:
+        print(f"Error enviando mail: {e}") 
+        flash("Hubo un error al enviar tu mensaje, intenta más tarde")
 
 if __name__== '__main__':
         app.run("localhost", port=8080, debug=True)
