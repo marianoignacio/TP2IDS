@@ -23,6 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
+                <a href=""><img src="{{ url_for('static', filename='/images/logo.png')}}" style="width: 65px;" alt=""></a>
                 <a class="navbar-brand" href="#page-top">Inicio</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -41,10 +42,10 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">{{ info_evento.1.nombre }}</h1>
+                        <h1 class="display-1 text-white font-weight-bold"><mark>{{ info_evento.1.nombre }}</mark></h1>
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">{{info_evento.1.descripcion}}</p>
+                        <p class="text-white-75 mb-5"><mark>{{info_evento.1.descripcion}}</mark></p>
                         <a class="btn btn-primary btn-xl" href="#about">Informacion</a>
                     </div>
                 </div>
@@ -56,15 +57,88 @@
         <section class="page-section" id="about" style="background-color: darkorange;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0" >Sobre la carrera</h2>
-                        <hr class="divider divider-light" />
+                    <div class="col-lg-6 text-center">
+                        <h2 class="text-primary mt-0" >Sobre la carrera</h2>
                         <p class="text-white-75 mb-4">{{info_evento.1.descripcion_larga}}</p>
-                        <p>Llená el formulario para inscribirte</p>
-                        <a class="btn btn-light btn-xl" href="{{ url_for('formulario') }}">Registrate</a>
+                        <p class="text-dark-75">Llená el formulario para inscribirte</p>
+                        <a class="btn btn-light btn-xl" href="{{ url_for('formulario') }}">Inscribirme!</a>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <h2 class="h3 text-primary mt-0" >Al participar en esta competencia podés obtener</h2>
+                        <ul class="list-unstyled">
+                                <li class="text-white-75">{{info_evento.3.listado.1}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.6}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.2}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.3}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.4}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.5}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.7}}</li>
+                                <li class="text-white-75">{{info_evento.3.listado.8}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="page-section" id="info-kit" style="background-image: url('../static/images/fondo_kit.png'); background-size:cover;">
+
+            <div class="container bg-secondary p-4 rounded">
+
+                 
+
+                    <div class="card-header text-white text-center">
+                      KITS
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">¿Cuando es entregado el kit y qué es lo que trae?</h5>
+                        <p class="card-text"> Este kit es entregado días antes de la carrera o puede pasar a retirarlo durante el registro</p>
+                    
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center">
+
+                            <img src="{{ url_for('static', filename='/images/kits.png')}}" alt="" style="width: 600px;">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.1_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.2_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.3_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.4_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.5_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.6_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.7_2}}</li>
+                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.8_2}}</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recorrido</h5>
+                                    <p class="card-text">Podes ver los puntos de hidratación, puntos de llegada y de inicio desde acá</p>
+                                    <a href="#Ubicacion" class="btn btn-primary">Ver Mapa</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Registrate</h5>
+                                    <p class="card-text">Toda la documentación para participar</p>
+                                    <a href="#deslinde" class="btn btn-primary">Descargá estos documentos</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        
+            </div>
+
         </section>
 
 
@@ -144,9 +218,13 @@
                             <p class="text-muted mb-0">{{info_evento.1.punto_salida}}</p>
                         </div>
                     </div>
-
-                   <center>  <h3>Ubicación</h3></center> 
-<iframe src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d50789.34611198536!2d-59.142046387077336!3d-37.28721408299573!3m2!1i1024!2i768!4f13.1!4m9!3e1!4m3!3m2!1d-37.2875982!2d-59.1191135!4m3!3m2!1d-37.341678!2d-59.127674199999994!5e0!3m2!1ses!2sar!4v1758792994154!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    
+                <div id="Ubicacion">
+                   <center>  <h3>Ubicación</h3>
+                         <hr class="divider" />
+                <iframe src="https://www.google.com/maps/embed?pb=!1m50!1m12!1m3!1d50766.565364986374!2d-59.16053981072891!3d-37.32095155712852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m35!3e1!4m3!3m2!1d-37.3425018!2d-59.122578!4m5!1s0x95911fb7cf269c03%3A0x7bc38984e9fbfdc4!2sAzcu%C3%A9naga%20641%2C%20B7000%20Tandil%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-37.3413635!2d-59.1281477!4m3!3m2!1d-37.3304869!2d-59.0959727!4m3!3m2!1d-37.315934999999996!2d-59.1086953!4m3!3m2!1d-37.303373799999996!2d-59.1244881!4m3!3m2!1d-37.3125901!2d-59.143542499999995!4m3!3m2!1d-37.336721!2d-59.140597899999996!4m3!3m2!1d-37.342267799999995!2d-59.1374006!5e0!3m2!1ses!2sar!4v1758850213816!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      
+                </center> 
+                </div>
             </div>
         </section>
 
@@ -233,14 +311,19 @@
 
         <!-- Call to action-->
         <section class="page-section bg-dark text-white" id=deslinde>
-            <div  class="container  d-flex align-items-center">
-                <h2 class="">No pierdas tiempo y realizá la preinscripción!(Firma el Deslinde para participar)</h2>
-                <a class="btn btn-light btn-xl" href="{{ url_for('static', filename='/documents/deslinde.pdf')}}">Deslinde</a>
+    <div class="card align-items-center">
+            <div class="card" style="width: 58rem;">
+                <div class="card-body">
+                    <center>
+                    <h2 class="card-title">No pierdas tiempo y realizá la preinscripción!</h2>
+                    <h3 class="h6 card-subtitle text-muted mb-2">(Firma el Deslinde para participar)</h3>
+                    <h6 class="card-subtitle mb-2 ">En caso de ser menor de edad, descargar la Autorización</h6>                    
+                    <a class="btn btn-light btn-xl" href="{{ url_for('static', filename='/documents/deslinde.pdf')}}">Deslinde</a>
+                    <a class="btn btn-light btn-xl" href="{{ url_for('static', filename='/documents/menores.pdf')}}">Autorización Menores</a>
+                    </center>
                 </div>
-                <div class="container  d-flex align-items-center">
-                <h2 class="">En caso de ser menor de edad, descargar</h2>
-                <a class="btn btn-light btn-xl" href="{{ url_for('static', filename='/documents/menores.pdf')}}">Autorización Menores</a>
             </div>
+    </div></div></div>
         </section>
 
        <!--^ESTO SE REPITE-->
@@ -250,7 +333,7 @@
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5">
                 <div class="container  d-flex align-items-center">
-                <ul>Mail:@mail.com</ul>
+                <ul><a href="mtbrally51@gmail.com">mtbrally51@gmail.com</a></ul>
                 <ul>Contacto: Whatsapp:11 +54 1234-5678</ul>
                 </div>
                 <div class="small text-center text-muted">Copyright &copy; 2025 - Dylan Ruiz, Mariano Molloja, Lucas Roda</div>
