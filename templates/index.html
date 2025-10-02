@@ -1,10 +1,13 @@
 {% extends "base.html" %}
-{% block navbar %} <ul class="navbar-nav ms-auto my-2 my-lg-0">
+{% block navbar %} 
+<!-- Menú de la página (NAVBAR) -->
+<ul class="navbar-nav ms-auto my-2 my-lg-0">
+
                         <li class="nav-item"><a class="nav-link" href="#about">Acerca</a></li>
                         <li class="nav-item"><a class="nav-link" href="#datos">Carrera</a></li>
                         <li class="nav-item"><a class="nav-link" href="#deslinde">Deslinde</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url_for('formulario') }}">Inscribite</a></li>
-                    </ul>
+ </ul>
 {% endblock %}
 
 {% block body %}
@@ -25,7 +28,8 @@
         </header>
 
 
-        <!-- About-->
+        <!-- Información de la carrera -->
+
         <section class="page-section" id="about" style="background-color: darkorange;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -56,12 +60,12 @@
 
             <div class="container bg-secondary p-4 rounded">
 
-                 
-
                     <div class="card-header text-white text-center">
                       KITS
                     </div>
+
                     <div class="card-body">
+                        
                         <h5 class="card-title text-center">¿Cuando es entregado el kit y qué es lo que trae?</h5>
                         <p class="card-text"> Este kit es entregado días antes de la carrera o puede pasar a retirarlo durante el registro</p>
                     
