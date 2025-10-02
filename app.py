@@ -15,7 +15,7 @@ app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 mail = Mail(app)
  
- 
+
  
 diccionario = { 
     1: {    "nombre": "Rally MTB 2025",  
@@ -97,13 +97,12 @@ def enviar():
         nacimiento= request.form['nacimiento']
         nacionalidad= request.form['nacionalidad']
         observaciones= request.form['observaciones']
-        archivo=request.form['archivo']
     
 
         msg = Message(
             subject=f"Inscripcion de: {nombre}",
             recipients=['mtbrally51@gmail.com'], 
-            body=f"Nombre: {nombre}\nApellido: {apellido}\nDNI: {dni}\nFecha de nacimiento: {nacimiento}\nTipo de carrera: {carrera}\nNacionalidad: {nacionalidad}\nMensaje:\n{observaciones}\nFoto:{archivo}"
+            body=f"Nombre: {nombre}\nApellido: {apellido}\nDNI: {dni}\nFecha de nacimiento: {nacimiento}\nTipo de carrera: {carrera}\nNacionalidad: {nacionalidad}\nMensaje:\n{observaciones}"
         )
 
         mail.send(msg)
