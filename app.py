@@ -1,20 +1,3 @@
-'''from flask import Flask
-# obligatorio
-from flask import render_template
-
-app = Flask(__name__)
-
-# Necesariio para mostrar contenido en un aplicativo
-@app.route('/')
-# Punto de entrada
-def home():
-    opciones={
-        'opcion 1':'Opcion uno'
-    }
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run("localhost", port=808)'''
 import os
 from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_mail import Mail, Message
