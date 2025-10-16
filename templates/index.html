@@ -41,16 +41,13 @@
                     </div>
                     <div class="col-lg-6 text-center">
                         <h2 class="h3 text-primary mt-0" >Al participar en esta competencia podés obtener</h2>
-                        <ul class="list-unstyled">
-                                <li class="text-white-75">{{info_evento.3.listado.1}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.6}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.2}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.3}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.4}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.5}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.7}}</li>
-                                <li class="text-white-75">{{info_evento.3.listado.8}}</li>
-                        </ul>
+                        <ol class="list">
+                                {% for elementos in lista_premios %}
+                                    {% if elementos % 2 != 0 %} 
+                                <li class="text-white-75">{{lista_premios[elementos]}}</li>
+                                    {% endif %}
+                                {% endfor %}
+                        </ol>
                     </div>
                 </div>
             </div>
@@ -79,14 +76,11 @@
                         <div class="col-md-6">
 
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.1_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.2_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.3_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.4_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.5_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.6_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.7_2}}</li>
-                                    <li class="list-group-item bg-transparent text-white">{{info_evento.3.listado.8_2}}</li>
+                                {% for elementos in lista_premios %}
+                                    {% if elementos % 2 == 0 %} 
+                                <li class="text-white-75">{{lista_premios[elementos]}}</li>
+                                    {% endif %}
+                                {% endfor %}
                                 </ul>
                         </div>
                     </div>
